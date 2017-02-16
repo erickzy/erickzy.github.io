@@ -397,9 +397,11 @@
 <li><strong>后记及附录</strong></li>
 </ol>
 <hr>
-<h2 id="第一部分：-入门"><a href="#第一部分：-入门" class="headerlink" title="第一部分： 入门"></a>第一部分： 入门</h2><h3 id="Chapter1-R语言介绍"><a href="#Chapter1-R语言介绍" class="headerlink" title="Chapter1 R语言介绍"></a><em>Chapter1 R语言介绍</em></h3><p>_+ <strong>典型数据分析步骤</strong><br><img src="http://oku512tqm.bkt.clouddn.com/2017-02-15-14871690624343.jpg" alt=""></p>
-<ul>
-<li><strong>R的常用链接</strong>：<br>  <a href="www.r-project.org">R-Project</a>是 R 语言的官方网站;<br>  通过<a href="https://cran.r-project.org/mirrors.html" target="_blank" rel="external">CRAN</a>可以下载R语言;<br>  目前<a href="www.rstudio.com">R-Studio</a>是最常用的 R 语言 IDE<br>  <a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts" target="_blank" rel="external">R-studio 快捷键列表</a><br>  <a href="https://www.r-bloggers.com/" target="_blank" rel="external">R blogger</a>强大的R-blogger不解释,其中Learn R中有很好的教程以及参考书目</li>
+<h2 id="第一部分：-入门"><a href="#第一部分：-入门" class="headerlink" title="第一部分： 入门"></a>第一部分： 入门</h2><h3 id="Chapter1-R语言介绍"><a href="#Chapter1-R语言介绍" class="headerlink" title="Chapter1 R语言介绍"></a><em>Chapter1 R语言介绍</em></h3><ul>
+<li><p><strong>典型数据分析步骤</strong><br><img src="http://oku512tqm.bkt.clouddn.com/2017-02-15-14871690624343.jpg" alt=""></p>
+</li>
+<li><p><strong>R的常用链接</strong>：<br>  <a href="www.r-project.org">R-Project</a>是 R 语言的官方网站;<br>  通过<a href="https://cran.r-project.org/mirrors.html" target="_blank" rel="external">CRAN</a>可以下载R语言;<br>  目前<a href="www.rstudio.com">R-Studio</a>是最常用的 R 语言 IDE<br>  <a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts" target="_blank" rel="external">R-studio 快捷键列表</a><br>  <a href="https://www.r-bloggers.com/" target="_blank" rel="external">R blogger</a>强大的R-blogger不解释,其中Learn R中有很好的教程以及参考书目</p>
+</li>
 </ul>
 <blockquote>
 <p><strong><em>Note</em></strong> </p>
@@ -413,25 +415,29 @@
 <li>逻辑型</li>
 </ul>
 </li>
-<li>数据对象<ul>
+<li><p>数据对象</p>
+<ul>
 <li>向量 <code>c(data)</code></li>
 <li>矩阵 <code>matrix(vector，nrow=，ncol=，byrow=，dimnames=)</code></li>
-<li>数组 <code>arry(vector, dimensions=c(), dimnames)</code></li>
+<li><p>数组 <code>arry(vector, dimensions=c(), dimnames)</code></p>
+<blockquote>
+<p>这里的dimensions 按照向量排列，顺序是：列数-&gt;行数-&gt;矩阵数-&gt;数组数-&gt;列表数.</p>
+</blockquote>
+</li>
+<li><p>数据框 <code>data-frame(col1,col2,col3...)</code></p>
+<blockquote>
+<ul>
+<li>与矩阵相比数据框内的数值可以是各种类型</li>
+<li>提取数据框的某一列采用 <code>$</code>  </li>
+<li>在明确声明变量不冲突的情况下，采用下面三个搜索路径代码会减小工作量<br>· 添加<code>attach()</code>· 移除<code>detach()</code>· 限定<code>with()</code> </li>
+</ul>
+</blockquote>
+</li>
+<li><p>因子 <code>factor()</code> 默认按字母顺序从1开始到n赋值，指定顺序则在函数中添加<code>levels=c(所需排列方式)</code></p>
+</li>
+<li>列表 <code>list()</code> 其中可以添加各种数据对象 ，并且可对对象赋值</li>
 </ul>
 </li>
-</ul>
-<pre><code>    &gt; 这里的dimensions 按照向量排列，顺序是：列数-&gt;行数-&gt;矩阵数-&gt;数组数-&gt;列表数，
-
-
-+ 数据框 `data-frame(col1,col2,col3...)`
-    &gt; + 与矩阵相比数据框内的数值可以是各种类型
-    &gt; + 提取数据框的某一列采用 `$`  
-    &gt; + 在明确声明变量不冲突的情况下，采用下面三个搜索路径代码会减小工作量   
-    · 添加`attach()`· 移除`detach()`· 限定`with()` 
-
-+ 因子 `factor()` 默认按字母顺序从1开始到n赋值，指定顺序则在函数中添加`levels=c(所需排列方式)`
-+ 列表 `list()` 其中可以添加各种数据对象 ，并且可对对象赋值
-</code></pre><ul>
 <li><p>数据导入</p>
 <blockquote>
 <p>代码 <code>readLines() + RCurl + XML +grep()+gsub()</code> 提取相关网页信息，可做R语言爬虫研究。</p>
